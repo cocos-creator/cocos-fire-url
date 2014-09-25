@@ -48,3 +48,20 @@ describe('FireUrl.dirname', function () {
         .should.eql('');
     });
 });
+
+describe('FireUrl.basename', function () {
+    it('should work for simple case', function () {
+        FireUrl.basename('assets://foo/bar/foobar.png')
+        .should.eql('foobar');
+    });
+
+    it('should support bare directory', function () {
+        FireUrl.basename('assets://foo/bar/')
+        .should.eql('bar');
+    });
+
+    it('should be protocol name', function () {
+        FireUrl.basename('assets://')
+        .should.eql('assets');
+    });
+});
