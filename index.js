@@ -1,3 +1,4 @@
+var Path = require('path');
 var Url = require('url');
 var FireUrl = {};
 
@@ -12,6 +13,13 @@ function normalize (str) {
 FireUrl.join = function () {
     var joined = [].slice.call(arguments, 0).join('/');
     return normalize(joined);
+};
+
+FireUrl.dirname = function ( url ) {
+    var dirname = Path.dirname(url);
+    if ( dirname === '.' )
+        return '';
+    return normalize(dirname);
 };
 
 //

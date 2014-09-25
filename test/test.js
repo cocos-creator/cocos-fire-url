@@ -26,3 +26,25 @@ describe('FireUrl.join', function () {
         .should.eql('assets://foo/bar/foobar.png');
     });
 });
+
+describe('FireUrl.dirname', function () {
+    it('should work for simple case', function () {
+        FireUrl.dirname('assets://foo/bar/foobar.png')
+        .should.eql('assets://foo/bar');
+    });
+
+    it('should support bare directory', function () {
+        FireUrl.dirname('assets://foo/bar/')
+        .should.eql('assets://foo');
+    });
+
+    it('should support root directory', function () {
+        FireUrl.dirname('assets://foo/')
+        .should.eql('assets://');
+    });
+
+    it('should be empty if we pass protocol', function () {
+        FireUrl.dirname('assets://')
+        .should.eql('');
+    });
+});
