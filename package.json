@@ -1,0 +1,28 @@
+{
+    "name": "fire-url",
+    "description": "node's url module with some helpful additions.",
+    "version": "0.1.0",
+    "keywords": [
+    ],
+    "scripts": {
+        "test": "mocha --require should"
+    },
+    "homepage": "https://github.com/fireball-x/fire-url",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/fireball-x/fire-url.git"
+    },
+    "bugs": {
+        "url": "http://github.com/fireball-x/fire-url/issues"
+    },
+    "licenses": [{
+        "type": "MIT",
+        "url": "http://github.com/fireball-x/fire-url/raw/master/LICENSE"
+    }],
+    "devDependencies": {
+        "mocha": "",
+        "should": ""
+    },
+    "dependencies": {
+    }
+}
