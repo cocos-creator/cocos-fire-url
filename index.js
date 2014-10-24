@@ -10,6 +10,8 @@ function normalize (str) {
     .replace(/\:\//g, '://');
 }
 
+FireUrl.normalize = normalize; 
+
 FireUrl.join = function () {
     var joined = [].slice.call(arguments, 0).join('/');
     return normalize(joined);
