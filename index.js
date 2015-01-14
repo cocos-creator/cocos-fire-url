@@ -28,14 +28,17 @@ FireUrl.extname = function ( url ) {
     return Path.extname(url);
 };
 
-FireUrl.basename = function ( url ) {
+FireUrl.basename = function ( url, extname ) {
     if ( FireUrl.dirname(url) === '' ) {
         var basename = Path.basename(url);
         return basename.substring(0,basename.length-1);
     }
 
-    var extname = FireUrl.extname(url);
     return Path.basename(url,extname);
+};
+
+FireUrl.basenameNoExt = function ( url ) {
+    return FireUrl.basename(url, FireUrl.extname(url) );
 };
 
 //
