@@ -24,9 +24,7 @@ FireUrl.dirname = function ( url ) {
     return normalize(dirname);
 };
 
-FireUrl.extname = function ( url ) {
-    return Path.extname(url);
-};
+FireUrl.extname = Path.extname;
 
 FireUrl.basename = function ( url, extname ) {
     if ( FireUrl.dirname(url) === '' ) {
