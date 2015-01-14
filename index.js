@@ -39,6 +39,11 @@ FireUrl.basenameNoExt = function ( url ) {
     return FireUrl.basename(url, FireUrl.extname(url) );
 };
 
+var _queryIndex = 0;
+FireUrl.addRandomQuery = function (url) {
+    return url + '?' + (_queryIndex++);
+};
+
 //
 var _ = {};
 var prop;
