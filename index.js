@@ -41,7 +41,15 @@ FireUrl.basenameNoExt = function ( url ) {
 
 var _queryIndex = 0;
 FireUrl.addRandomQuery = function (url) {
-    return url + '?' + (_queryIndex++);
+    if (_queryIndex < 10) {
+        return url + '?00' + (_queryIndex++);
+    }
+    else if (_queryIndex < 100) {
+        return url + '?0' + (_queryIndex++);
+    }
+    else {
+        return url + '?' + (_queryIndex++);
+    }
 };
 
 //
