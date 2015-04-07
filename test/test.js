@@ -1,5 +1,12 @@
 var FireUrl = require('../index');
 
+describe('FireUrl.normalize', function () {
+    it('should work for simple case', function () {
+        FireUrl.normalize('assets://\\foobar\\hello.fire')
+        .should.eql('assets://foobar/hello.fire');
+    });
+});
+
 describe('FireUrl.join', function () {
     it('should work for simple case', function () {
         FireUrl.join('http://www.google.com/', 'foo/bar', '?test=123')
@@ -52,7 +59,7 @@ describe('FireUrl.dirname', function () {
 describe('FireUrl.basename', function () {
     it('should work for simple case', function () {
         FireUrl.basename('assets://foo/bar/foobar.png')
-        .should.eql('foobar');
+        .should.eql('foobar.png');
     });
 
     it('should support bare directory', function () {
