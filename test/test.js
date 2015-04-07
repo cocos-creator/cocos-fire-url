@@ -5,6 +5,10 @@ describe('FireUrl.normalize', function () {
         FireUrl.normalize('assets://\\foobar\\hello.fire')
         .should.eql('assets://foobar/hello.fire');
     });
+    it('should work for white space case', function () {
+        FireUrl.normalize('assets://\\foo\ bar\\hello.fire')
+        .should.eql('assets://foo bar/hello.fire');
+    });
 });
 
 describe('FireUrl.join', function () {
