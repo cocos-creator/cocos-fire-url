@@ -40,16 +40,18 @@ FireUrl.basenameNoExt = function ( url ) {
     return FireUrl.basename(url, FireUrl.extname(url) );
 };
 
-var _queryIndex = 0;
+var _queryIndices = {};
 FireUrl.addRandomQuery = function (url) {
-    if (_queryIndex < 10) {
-        return url + '?00' + (_queryIndex++);
+    var queryIndex = _queryIndices[url] || 0;
+    _queryIndices[url] = ++queryIndex;
+    if (queryIndex < 10) {
+        return url + '?00' + queryIndex;
     }
-    else if (_queryIndex < 100) {
-        return url + '?0' + (_queryIndex++);
+    else if (queryIndex < 100) {
+        return url + '?0' + queryIndex;
     }
     else {
-        return url + '?' + (_queryIndex++);
+        return url + '?' + queryIndex;
     }
 };
 
