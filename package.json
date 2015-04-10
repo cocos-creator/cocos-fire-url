@@ -1,7 +1,7 @@
 {
     "name": "fire-url",
     "description": "node's url module with some helpful additions.",
-    "version": "0.1.6",
+    "version": "0.1.7",
     "keywords": [
     ],
     "scripts": {
